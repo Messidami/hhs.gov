@@ -233,6 +233,16 @@
 
 
     @media (max-width: 768px) {
+
+.header-left {
+    display: flex;
+}
+
+    .header-left img {
+      height: 50px;
+      width: 90%;
+    }
+
         .top1 img{
             width: 300px;
         }
