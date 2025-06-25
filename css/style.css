@@ -97,8 +97,8 @@
     }
 
     .container {
-      background-color: #162e51;
       color: white;
+      background-color: #162e51;
       padding: 60px 5%;
     }
 
@@ -192,7 +192,189 @@
     .protect a:hover {
       text-decoration: underline;
     }
+    .recent {
+  width: 90%;
+  margin: 10px auto;
+}
 
+h2 {
+  text-align: left;
+  color: #162e51;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.news-item {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.date {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.headline {
+  display: block;
+  font-weight: bold;
+  font-size: 17px;
+  color: #004080;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.headline:hover {
+  text-decoration: underline;
+}
+
+.source {
+  font-size: 14px;
+  color: #999;
+}
+.section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.section h2 {
+  font-size: 24px;
+  color: #0b1231;
+  margin-bottom: 40px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.cards {
+  background: #e6f9f9;
+  padding: 25px;
+  height: 350px;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.cards .icon {
+  font-size: 30px;
+  color: #00aaff;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+.cards h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #0b1231;
+}
+
+.cards ul {
+  padding: 0;
+  margin-top: 30px;
+}
+
+.cards ul li {
+  margin-bottom: 15px;
+}
+
+.cards ul li a {
+  text-decoration: none;
+  color: #004080;
+  font-size: 15px;
+}
+
+.cards ul li a:hover {
+  text-decoration: underline;
+}
+.cont{
+  width: 100%;
+  height: 500px;
+  padding: 60px 0;
+  background-color: #f7f9fa;
+}
+.agency-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+   background: linear-gradient(90deg, #006778 50%, #00b5a5 50%);
+  color: white;
+  overflow: hidden;
+  margin: auto;
+  width: 85%;
+  height: 400px;
+}
+
+.agency-content {
+  flex: 1;
+  padding: 40px 30px;
+  max-width: 550px;
+}
+
+.agency-content h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.agency-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.agency-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.agency-btn:hover {
+  background: white;
+  color: #006778;
+}
+
+.agency-image {
+  flex: 1;
+  width: 100%;
+  height: 400px;
+  background: url('/css/image/logo_mesh_green.webp') no-repeat center center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .agency-banner {
+    flex-direction: column;
+  }
+  .agency-image {
+    width: 100%;
+    height: auto;
+  }
+}
     
 
 
