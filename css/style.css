@@ -450,6 +450,7 @@ h2 {
       }
       .video-section iframe{
         height: 250px;
+        padding: 10px;
         width: 100%;
       }
 
