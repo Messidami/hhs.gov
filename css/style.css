@@ -406,22 +406,106 @@ h2 {
       line-height: 1.6;
     }
 
-    .back-to-top {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 20px;
-      background-color: #0071bc;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
+   
+.subscribe-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+}
 
-    .back-to-top:hover {
-      background-color: #005a99;
-    }
+.subscribe-section h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.subscribe-section button {
+  margin-top: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.subscribe-section button:hover {
+  background-color: #002244;
+}
+
+.main-footer {
+  background-color: #004080;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.link-column {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.link-column a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.link-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-info {
+  flex: 1 1 250px;
+  font-size: 14px;
+}
+
+.social-section {
+  flex: 1 1 250px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #99ccff;
+}
+
+.secretary-follow {
+  margin-top: 20px;
+}
+
+.back-to-top {
+  display: block;
+  text-align: right;
+  margin-top: 30px;
+  color: #cce6ff;
+  text-decoration: none;
+  font-size: 14px;
+}
 
 
 
@@ -463,14 +547,24 @@ h2 {
         font-size: 1.05rem;
         text-align: justify;
       }
-
-      .back-to-top {
-        display: block;
-        width: fit-content;
-        margin: 30px auto 0;
-        font-size: 1rem;
+      .link-column{
+        margin-top: 10px;
       }
-    }
+       .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .subscribe-section h2 {
+    font-size: 20px;
+  }
+  .main-footer{
+    height: auto;
+  }
+}
 
     
 
