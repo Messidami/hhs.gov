@@ -48,6 +48,7 @@ body {
 
 .main-nav ul {
   list-style: none;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -66,7 +67,7 @@ body {
 
 /* ====== FACT CARD ====== */
 .fact-card {
-  max-width: 900px;
+ width: 90%;
   margin: 2rem auto;
   padding: 2rem;
   background: #fff;
@@ -184,6 +185,7 @@ body {
 
   .fact-card {
     padding: 1.5rem;
+    width: 100%;
   }
 
   .fact-header h3 {
@@ -194,7 +196,11 @@ body {
 @media (max-width: 480px) {
   .site-header .container {
     flex-direction: column;
+    width: 100%;
     text-align: center;
+  }
+  .fact-card{
+    width: 100%;
   }
 
   .logo {
