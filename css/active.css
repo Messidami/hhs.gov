@@ -21,8 +21,9 @@ body {
 }
 
 .site-header .container {
-  max-width: 1200px;
+   width: 100%;
   margin: auto;
+ background: #0d132d; 
   padding: 0 1rem;
   display: flex;
   justify-content: space-between;
