@@ -16,6 +16,7 @@ body {
 .site-header {
   background: #0d132d; /* deep blue */
   color: #fff;
+  width: 100%;
   padding: 1rem 0;
 }
 
