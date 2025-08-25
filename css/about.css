@@ -371,3 +371,20 @@ h1{
   .tile--list{ order: -1; } 
 }
     }
+
+        @media (max-width: 768px) {
+        header{
+            align-items: center;
+            width: 100%;
+        }
+
+.header-left {
+    display: flex;
+    width: 60%;
+}
+
+    .header-left img {
+      height: 50px;
+      width: 100%;
+    }
+  }
