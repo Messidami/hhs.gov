@@ -1,0 +1,780 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Color Variables */
+:root {
+    --primary: #2563eb;
+    --primary-light: #60a5fa;
+    --healthcare: #059669;
+    --healthcare-light: #34d399;
+    --education: #7c3aed;
+    --education-light: #a78bfa;
+    --trust: #1e40af;
+    --background: #ffffff;
+    --secondary: #f8fafc;
+    --foreground: #0f172a;
+    --muted-foreground: #64748b;
+    --border: #e2e8f0;
+    --card: #ffffff;
+    --accent: #f1f5f9;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(124, 58, 237, 0.8));
+}
+
+/* Header */
+.hero-header {
+    position: relative;
+    z-index: 20;
+    background: transparent;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+}
+.hero-title .hero-buttons button a{
+    text-decoration: none;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(5, 150, 105, 0.3));
+    backdrop-filter: blur(10px);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo-icon span {
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.logo-text h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.logo-text p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.desktop-nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.desktop-nav a:hover {
+    color: white;
+}
+
+.apply-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.apply-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Content */
+.hero-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+}
+
+.hero-text {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.highlight-students {
+    background: linear-gradient(135deg, #34d399, white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlight-healthcare {
+    background: linear-gradient(135deg, #a78bfa, white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 32rem;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.btn-primary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary {
+    background: rgba(5, 150, 105, 0.9);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -10px rgba(5, 150, 105, 0.3);
+}
+
+.btn-secondary:hover {
+    background: #059669;
+}
+
+.hero-bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8rem;
+    background: linear-gradient(to top, #ffffff, transparent);
+    z-index: 10;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: bold;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: var(--muted-foreground);
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.section-divider {
+    width: 6rem;
+    height: 0.25rem;
+    background: linear-gradient(135deg, var(--primary), var(--healthcare));
+    margin: 2rem auto 0;
+    border-radius: 9999px;
+}
+
+/* Support Section */
+.support-section {
+    padding: 6rem 0;
+    background-color: var(--background);
+}
+
+.support-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.support-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.support-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.support-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.support-card p {
+    color: var(--muted-foreground);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.card-button {
+    background: linear-gradient(135deg, var(--primary), var(--healthcare));
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.3), var(--background));
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, var(--primary), var(--healthcare));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.testimonial-info h3 {
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.testimonial-info p {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+.testimonial-content {
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 6rem 0;
+    background-color: var(--trust);
+    color: white;
+}
+
+.stats-section .section-header h2 {
+    color: white;
+}
+
+.stats-section .section-header p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--healthcare-light), var(--education-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.stat-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+}
+
+/* Application Process Section */
+.application-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--background), rgba(248, 250, 252, 0.2));
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 72rem;
+    margin: 0 auto 3rem;
+}
+
+.step-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.3);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, var(--primary), var(--healthcare));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.step-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.step-card p {
+    color: var(--muted-foreground);
+    line-height: 1.6;
+}
+
+.application-cta {
+    text-align: center;
+}
+
+.cta-content {
+    margin-bottom: 2rem;
+}
+
+.cta-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    color: var(--muted-foreground);
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* DHHS Section */
+.dhhs-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.5), var(--background));
+}
+
+.dhhs-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dhhs-card h3 {
+    font-size: 1.25rem;
+    color: var(--trust);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.dhhs-card p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--muted-foreground);
+}
+
+.dhhs-highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 48rem;
+    margin: 2rem auto 0;
+}
+
+.highlight-item {
+    text-align: center;
+}
+
+.highlight-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-item:nth-child(1) .highlight-title {
+    color: var(--primary);
+}
+
+.highlight-item:nth-child(2) .highlight-title {
+    color: var(--healthcare);
+}
+
+.highlight-item:nth-child(3) .highlight-title {
+    color: var(--trust);
+}
+
+.highlight-description {
+    color: var(--muted-foreground);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--trust);
+    color: white;
+    padding: 3rem 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-icon {
+    width: 2rem;
+    height: 2rem;
+    background: linear-gradient(135deg, var(--primary-light), var(--healthcare));
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo-icon span {
+    color: white;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.footer-logo-text {
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: white;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-dept {
+    font-size: 0.875rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+    .hero-buttons {
+        flex-direction: row;
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 2rem;
+    }
+    
+    .desktop-nav {
+        display: flex;
+    }
+    
+    .support-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dhhs-highlights {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .desktop-nav {
+        display: none;
+    }
+}
