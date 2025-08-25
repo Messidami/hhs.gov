@@ -518,8 +518,46 @@ h2 {
 
 
 
-@media (max-width: 768px) {
-  .usa h1{
+
+
+    
+    @media (max-width: 768px) {
+        header{
+            align-items: center;
+            width: 100%;
+        }
+
+.header-left {
+    display: flex;
+    width: 60%;
+}
+
+    .header-left img {
+      height: 50px;
+      width: 100%;
+    }
+
+        .top1 img{
+            width: 300px;
+        }
+      .content {
+        flex-direction: column;
+      }
+
+      .content img,
+      .usa {
+        width: 100%;
+        text-align: center;
+      }
+
+      .usa {
+        padding-top: 20px;
+      }
+       .protect a{
+        font-size: 20px;
+       }
+
+        .usa h1{
     font-size: 30px;
   }
   .agency-banner {
@@ -567,82 +605,7 @@ h2 {
   .main-footer{
     height: auto;
   }
-}
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @media (max-width: 768px) {
-        header{
-            align-items: center;
-            width: 100%;
-        }
-
-.header-left {
-    display: flex;
-    width: 60%;
-}
-
-    .header-left img {
-      height: 50px;
-      width: 100%;
-    }
-
-        .top1 img{
-            width: 300px;
-        }
-      .content {
-        flex-direction: column;
-      }
-
-      .content img,
-      .usa {
-        width: 100%;
-        text-align: center;
-      }
-
-      .usa {
-        padding-top: 20px;
-      }
-       .protect a{
-        font-size: 20px;
-       }
     }
 
 

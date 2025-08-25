@@ -6,59 +6,223 @@
   <title>About HHS</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
   <link rel="stylesheet" href="css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
 </head>
 <body>
-    
-        <div class="info-section">
-    <a href="index.html" class="back-link">
-        <i class="bi bi-arrow-left"></i> Back to Front Page
-    </a>
-</div>
-
- <div class="bodyy">
-     <header class="header">
-    <h1>About HHS</h1>
-    <p>U.S. Department of Health & Human Services</p>
-    
+   
+      <header>
+  <div class="header-left">
+      <img src="image/logo-desktop.svg" alt="Logo">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()"> Explore</button>
+  <div class="search-box">
+    <input type="text" placeholder="Search">
+    <i class="bi bi-search"></i>
+  </div>
   </header>
 
-  <section class="about">
-    <div class="container">
-      <h2>Who We Are</h2>
-      <p>
-        The Department of Health and Human Services (HHS) is the United States government's principal agency for protecting the health of all Americans and providing essential human services.
-        Our mission is to enhance the well-being of all Americans by providing effective health and human services and fostering advances in medicine, public health, and social services.
-      </p>
+  
 
-      <h2>Our Mission</h2>
-      <p>
-        To provide the building blocks that Americans need to live healthy, successful lives. We aim to protect the health of all Americans and provide essential services, especially for those who are least able to help themselves.
-      </p>
+  <nav>
+    <ul id="navList">
+      <li><a href="about.html">About HHS</a></li>  
+      <li><a href="program.html">Programs & Services</a></li>
+      <li><a href="grant.html">Grants & Contracts</a></li>
+      <li><a href="law.html">Laws & Regulations</a></li>
+      <li><a href="radical.html">Radical Transparency</a></li>
+      <li><a href="#">MAHA in Action</a></li>
 
-      <h2>What We Do</h2>
-      <ul>
-        <li>Provide health insurance through Medicare and Medicaid</li>
-        <li>Support medical research through the NIH</li>
-        <li>Ensure food and drug safety through the FDA</li>
-        <li>Combat public health threats and disease outbreaks</li>
-        <li>Fund and support state and local health initiatives</li>
-      </ul>
 
-      <h2>Core Values</h2>
-      <p>
-        Accountability, transparency, service, equity, and innovation are the guiding principles that help us serve the public better.
-      </p>
+    </ul>
+  </nav>
 
-      <div class="quote">
-        <p>\"Improving the health, safety, and well-being of America.\"</p>
-      </div>
-    </div>
+
+  <div class="body">
+      <header class="site-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">›</span>
+      <span class="current">About HHS</span>
+    </nav>
+  </header>
+   </div>
+
+  <main class="container" id="main-content">
+    <h1>About HHS</h1>
+    <p class="lede">
+      The mission of the U.S. Department of Health and Human Services (HHS) is to enhance the health and well-being of all Americans,
+      by providing for effective health and human services and by fostering sound, sustained advances in the sciences underlying
+      medicine, public health, and social services.
+    </p>
+
+    <section class="tiles-grid" aria-label="Quick links and resources">
+    
+      <article class="tile tile--list">
+        <h2>I would like info on...</h2>
+        <ul class="link-list">
+          <li><a href="#">HHS organizational chart</a></li>
+          <li><a href="#">Contacting someone at HHS</a></li>
+          <li><a href="#">Current Job Openings at HHS</a></li>
+          <li><a href="#">Student &amp; Recent Grads Careers</a></li>
+        </ul>
+      </article>
+
+     
+      <article class="tile">
+        <h2>HHS Family of Agencies</h2>
+        <p>HHS programs are administered by the Office of the Secretary, Staff Divisions, Operating Divisions, and Regional Offices.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Leadership</h2>
+        <p>The Department’s leaders are public servants committed to your health and well-being.</p>
+      </article>
+
+      
+      <article class="tile">
+        <h2>Budget &amp; Performance</h2>
+        <p>The HHS financial report provides fiscal and high-level performance results.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Press Room</h2>
+        <p>The HHS Press Room is a gateway to the Department’s latest press releases and press office information.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Careers</h2>
+        <p>HHS offers a rewarding career working with the latest in health research, care, and technologies to improve the quality of life of millions.</p>
+      </article>
+
+  
+      <article class="tile">
+        <h2>I Am HHS</h2>
+        <p>A multi-part video series featuring HHS employees’ stories of their journey, passion, and experiences working for the Department</p>
+      </article>
+
+      <article class="tile">
+        <h2>Strategic Plan</h2>
+        <p>Every four years, HHS updates our Strategic Plan, which describes our work to address current health and human services issues.</p>
+      </article>
+
+      <article class="tile">
+        <h2>HHS Guidance Portal</h2>
+        <p>HHS Guidance Portal is a searchable database for HHS guidance documents currently in effect. Guidance documents may include interpretive memoranda, policy statements, manuals, bulletins, advisories, and more.</p>
+      </article>
+
+       <article class="tile">
+        <h2>HHS Historical Highlights</h2>
+        <p>The Historical Highlights lists major events in HHS history and a list of its Secretaries.</p>
+      </article>
+
+      <article class="tile">
+        <h2>FOIA</h2>
+        <p>The Freedom of Information (FOI)/Privacy Acts Division handles FOIA and Privacy Act issues and requests.</p>
+      </article>
+
+       <article class="tile">
+        <h2> HHS Sustainability</h2>
+        <p>HHS Outlines its path toward sustainable operation and efficiency and shares additional resources and tools for achieving HHS Sustainability goals.</p>
+      </article>
+
+       <article class="tile">
+        <h2>Open Government at HHS</h2>
+        <p>HHS's open government plan, reports, and initiatives help the public hold the government accountable.</p>
+      </article>
+    </section>
+  </main>
+
+    <!-- Subscribe section -->
+  <section class="subscribe">
+    <h2>Subscribe to Email Updates</h2>
+    <p>Receive the latest updates from the Secretary and Press Releases.</p>
+    <form class="subscribe-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
   </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 HHS - Department of Health and Human Services</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">Contact HHS</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">HHS FAQs</a></li>
+        <li><a href="#">Nondiscrimination Notice</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Press Room</a></li>
+        <li><a href="#">HHS Archive</a></li>
+        <li><a href="#">Accessibility Statement</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Budget/Performance</a></li>
+        <li><a href="#">Inspector General</a></li>
+        <li><a href="#">Web Site Disclaimers</a></li>
+        <li><a href="#">EEO/No Fear Act</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">FOIA</a></li>
+        <li><a href="#">The White House</a></li>
+        <li><a href="#">USA.gov</a></li>
+        <li><a href="#">Vulnerability Disclosure Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <p><strong>U.S. Department of Health and Human Services</strong><br>
+        200 Independence Avenue, S.W.<br>
+        Washington, D.C. 20201<br>
+        Toll Free Call Center: 1-877-696-6775</p>
+      </div>
+
+      <div class="footer-social">
+        <p>Follow HHS</p>
+        <div class="social-icons">
+          <a href="#">F</a>
+          <a href="#">X</a>
+          <a href="#">Y</a>
+          <a href="#">I</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+
+      <div class="footer-secretary">
+        <p>Follow Secretary Kennedy</p>
+        <div class="social-icons">
+          <a href="#">F</a>
+          <a href="#">X</a>
+          <a href="#">T</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-to-top">
+      <a href="#top">Back to top ↑</a>
+    </div>
   </footer>
- </div>
+
+ 
+   
+
+
+
+
+
+
+
+
+
+   <script>
+    function toggleMenu() {
+      document.getElementById('navList').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
