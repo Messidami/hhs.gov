@@ -1,78 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radical Transparency</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
-  <title>Radical Transparency - HHS</title>
-  <link rel="stylesheet" href="css/radical.css" />
+  <link rel="stylesheet" href="css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
 </head>
 <body>
-
-
-              <div class="info-section">
-    <a href="index.html" class="back-link">
-        <i class="bi bi-arrow-left"></i> Back to Front Page
-    </a>
-</div>
-
- <div class="bodyy">
-     <header class="header">
-    <h1>Radical Transparency</h1>
-    <p>Our commitment to openness, accountability, and public trust.</p>
+   
+      <header>
+  <div class="header-left">
+      <img src="image/logo-desktop.svg" alt="Logo">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()"> Explore</button>
+  <div class="search-box">
+    <input type="text" placeholder="Search">
+    <i class="bi bi-search"></i>
+  </div>
   </header>
 
-  <main class="transparency-container">
-    <section class="transparency-card">
-      <h2>Budget Breakdown</h2>
-      <p>We publish detailed, public reports on how every dollar is allocated across departments and initiatives.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>Budget documents include line-by-line allocations, annual expenditures, and future planning. Transparency ensures public oversight and informed decision-making.</p>
-      </div>
-    </section>
+  
 
-    <section class="transparency-card">
-      <h2>Leadership Disclosures</h2>
-      <p>See the financial disclosures, decisions, and performance reviews of our senior officials.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>Leadership files include annual conflict-of-interest forms, salaries, and executive travel logs made publicly available each quarter.</p>
-      </div>
-    </section>
+  <nav>
+    <ul id="navList">
+      <li><a href="about.html">About HHS</a></li>  
+      <li><a href="program.html">Programs & Services</a></li>
+      <li><a href="grant.html">Grants & Contracts</a></li>
+      <li><a href="law.html">Laws & Regulations</a></li>
+      <li><a href="radical.html">Radical Transparency</a></li>
+      <li><a href="#">MAHA in Action</a></li>
 
-    <section class="transparency-card">
-      <h2>Public Meeting Records</h2>
-      <p>Access full transcripts and video recordings of meetings with stakeholders, the public, and partners.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>Meeting archives include audio, video, and presentation decks, organized by date and topic. Anyone can watch or download for review.</p>
-      </div>
-    </section>
 
-    <section class="transparency-card">
-      <h2>Performance Metrics</h2>
-      <p>We track and report our impact and outcomes using standardized KPIs.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>KPIs include service delivery times, response efficiency, community health scores, and more — all benchmarked publicly.</p>
-      </div>
-    </section>
+    </ul>
+  </nav>
 
-    <section class="transparency-card">
-      <h2>Whistleblower Support</h2>
-      <p>We protect individuals who report unethical practices or internal misconduct.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>Anonymous reporting channels and legal safeguards ensure employees and citizens can report wrongdoings safely and without retaliation.</p>
-      </div>
+
+  <div class="body">
+      <header class="site-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">›</span>
+      <span class="current">Radical Transparency</span>
+    </nav>
+  </header>
+   </div>
+
+  <main class="container" id="main-content">
+    <h1>Radical Transparency</h1>
+
+
+    <section class="tiles-grid" aria-label="Quick links and resources">
+    
+      
+
+     
+      <article class="tile">
+        <h2>CDC’s ACIP Conflicts of Interest</h2>
+        <p>CDC’s tool allows Americans to quickly view conflicts of interest of members of the Advisory Committee on Immunization Practices (ACIP) committee.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Ending Anti-Semitism on College Campuses</h2>
+        <p>Learn more about the multi-agency task force committed to ending anti-semitic harassment on college campuses.</p>
+      </article>
+
+      
+      <article class="tile">
+        <h2> Human Subjects Research Protections</h2>
+        <p>Institutions engaging in most HHS-supported human subject research must have an approved assurance of compliance with protective HHS regulations.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Ending Wasteful Spending</h2>
+        <p>View the listing of HHS contracts terminated in full or part since January 21, 2025.</p>
+      </article>
+
+  
+      <article class="tile">
+        <h2>Keeping Food Ingredients Safe</h2>
+        <p>HHS and FDA are committed to promoting radical transparency to make sure all Americans know what is in their food.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Find Rules by Operating Division</h2>
+        <p>Rules and Notices from each HHS Operating Division are available on Regulations.gov.</p>
+      </article>
+
+
+       <article class="tile">
+        <h2>Additional HHS Laws & Regulations</h2>
+        <p>Find laws and regulations on civil rights, privacy rights, research, fraud prevention and detection, freedom of information, tribal matters, employment, and more.</p>
+      </article>
+
+    
+      <article class="tile">
+        <h2>Chemical Contaminants Transparency Tool</h2>
+        <p>The CCT Tool, which provides contaminant levels in one location for ease of searching, is one of the outcomes of the FDA’s initiative to modernize food chemical safety.</p>
+      </article>
+
+      
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 HHS - Department of Health and Human Services</p>
+  Content created by Assistant Secretary for Public Affairs (ASPA)
+
+    <!-- Subscribe section -->
+  <section class="subscribe">
+    <h2>Subscribe to Email Updates</h2>
+    <p>Receive the latest updates from the Secretary and Press Releases.</p>
+    <form class="subscribe-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">Contact HHS</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">HHS FAQs</a></li>
+        <li><a href="#">Nondiscrimination Notice</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Press Room</a></li>
+        <li><a href="#">HHS Archive</a></li>
+        <li><a href="#">Accessibility Statement</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Budget/Performance</a></li>
+        <li><a href="#">Inspector General</a></li>
+        <li><a href="#">Web Site Disclaimers</a></li>
+        <li><a href="#">EEO/No Fear Act</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">FOIA</a></li>
+        <li><a href="#">The White House</a></li>
+        <li><a href="#">USA.gov</a></li>
+        <li><a href="#">Vulnerability Disclosure Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <p><strong>U.S. Department of Health and Human Services</strong><br>
+        200 Independence Avenue, S.W.<br>
+        Washington, D.C. 20201<br>
+        Toll Free Call Center: 1-877-696-6775</p>
+      </div>
+
+      <div class="footer-social">
+        <p>Follow HHS</p>
+        <div class="social-icons">
+          <a href="#">F</a>
+          <a href="#">X</a>
+          <a href="#">Y</a>
+          <a href="#">I</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+
+      <div class="footer-secretary">
+        <p>Follow Secretary Kennedy</p>
+        <div class="social-icons">
+          <a href="#">F</a>
+          <a href="#">X</a>
+          <a href="#">T</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+    </div>
   </footer>
- </div>
+
+ 
+   
+
+
+
+
+
+
+
+
+
+   <script>
+    function toggleMenu() {
+      document.getElementById('navList').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
