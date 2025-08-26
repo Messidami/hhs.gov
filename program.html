@@ -1,63 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programs & Services - HHS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/program.css">
+  <link rel="stylesheet" href="css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
 </head>
 <body>
-
-
-         <div class="info-section">
-    <a href="index.html" class="back-link">
-        <i class="bi bi-arrow-left"></i> Back to Front Page
-    </a>
-</div>
-
-<div class="boddy">
-      <header class="header">
-    <h1>Programs & Services</h1>
-    <p>Explore the wide range of public health and support programs offered by HHS.</p>
+   
+      <header>
+  <div class="header-left">
+      <img src="image/logo-desktop.svg" alt="Logo">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()"> Explore</button>
+  <div class="search-box">
+    <input type="text" placeholder="Search">
+    <i class="bi bi-search"></i>
+  </div>
   </header>
 
-  <main class="programs-container">
-    <section class="program-card" onclick="toggleDetails(this)">
-      <h2>Medicare & Medicaid</h2>
-      <p>Providing health coverage to millions of Americans.</p>
-      <div class="details">
-        <p>HHS administers Medicare and Medicaid to offer affordable and reliable health insurance options to seniors, low-income families, and people with disabilities.</p>
-      </div>
-    </section>
+  
 
-    <section class="program-card" onclick="toggleDetails(this)">
-      <h2>Public Health Services</h2>
-      <p>Protecting the nation from health threats.</p>
-      <div class="details">
-        <p>Through the CDC and other agencies, HHS monitors disease outbreaks, provides immunizations, and runs health education campaigns nationwide.</p>
-      </div>
-    </section>
+  <nav>
+    <ul id="navList">
+      <li><a href="about.html">About HHS</a></li>  
+      <li><a href="program.html">Programs & Services</a></li>
+      <li><a href="grant.html">Grants & Contracts</a></li>
+      <li><a href="law.html">Laws & Regulations</a></li>
+      <li><a href="radical.html">Radical Transparency</a></li>
+      <li><a href="#">MAHA in Action</a></li>
 
-    <section class="program-card" onclick="toggleDetails(this)">
-      <h2>Child & Family Support</h2>
-      <p>Helping children and families thrive.</p>
-      <div class="details">
-        <p>Programs include Head Start, child welfare services, adoption and foster care support, and assistance for low-income households.</p>
-      </div>
+
+    </ul>
+  </nav>
+
+
+  <div class="body">
+      <header class="site-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">›</span>
+      <span class="current">Programs & Services</span>
+    </nav>
+  </header>
+   </div>
+
+  <main class="container" id="main-content">
+    <h1>Programs & Services</h1>
+    <p class="lede">HHS administers more than 100 programs across its operating divisions. HHS programs protect the health of all Americans and provide essential human services, especially for those who are least able to help themselves.
+    </p>
+
+    <section class="tiles-grid" aria-label="Quick links and resources">
+    
+      <article class="tile tile--list">
+        <h2>I would like info on...</h2>
+        <ul class="link-list">
+          <li><a href="#">Head Start locations </a></li>
+          <li><a href="#">Current poverty guidelines </a></li>
+          <li><a href="#">Resources for health students and workers </a></li>
+          <li><a href="#">Support for issues with mental health, drugs, or alcohol (FindSupport.gov)</a></li>
+        </ul>
+      </article>
+
+     
+      <article class="tile">
+        <h2>HIPAA & Your Health Rights</h2>
+        <p>The Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule and federal civil rights laws protect Americans’ fundamental health rights.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Health Insurance</h2>
+        <p>Learn more about health insurance and HHS’s actions to provide relief to patients.</p>
+      </article>
+
+      
+      <article class="tile">
+        <h2>Social Services</h2>
+        <p>Programs and services such as Temporary Assistance for Needy Families (TANF), Head Start, child care, and child support help individuals, families, and communities.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Prevention & Wellness</h2>
+        <p>HHS agencies offer resources to help you eat smart, exercise regularly, and get routine health screenings and vaccinations.</p>
+      </article>
+
+      <article class="tile">
+        <h2> Providers & Facilities</h2>
+        <p>Locate health care providers and facilities, compare your options, and find resources for caregivers.</p>
+      </article>
+
+  
+      <article class="tile">
+        <h2>Public Health & Safety</h2>
+        <p>HHS agencies offer resources to help you and your family stay safe by informing you about food, drugs, medical devices, violence prevention, and more.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Emergency Preparedness & Response</h2>
+        <p>Learn about national efforts to prepare for, respond to, and recover from disasters and public health emergencies.</p>
+      </article>
+
+      <article class="tile">
+        <h2>HHS Guidance Portal</h2>
+        <p>HHS Guidance Portal is a searchable database for HHS guidance documents currently in effect. Guidance documents may include interpretive memoranda, policy statements, manuals, bulletins, advisories, and more.</p>
+      </article>
+
+       <article class="tile">
+        <h2>Research</h2>
+        <p>Learn how HHS expands scientific understanding of health care, public health, human services, biomedical research, and availability of safe food and drugs.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Featured Topic Websites</h2>
+        <p>Discover HHS websites on topics such as the flu, vaccines, tobacco, health care, mental health, food safety, bullying, HIV/AIDS, and more.</p>
+      </article>
+
+       <article class="tile">
+        <h2>Education & Training Opportunities</h2>
+        <p>Find HHS education and training opportunities for health professionals and students including loans, scholarships, and training programs.</p>
+      </article>
+
+       <article class="tile">
+        <h2>Complaints & Appeals</h2>
+        <p>Find out how to file a complaint or appeal a decision related to health information privacy, civil rights, Medicare, and more.</p>
+      </article>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 HHS - Department of Health and Human Services</p>
-  </footer>
-</div>
+    <!-- Subscribe section -->
+  <section class="subscribe">
+    <h2>Subscribe to Email Updates</h2>
+    <p>Receive the latest updates from the Secretary and Press Releases.</p>
+    <form class="subscribe-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
 
-  <script>
-    function toggleDetails(card) {
-      const detail = card.querySelector('.details');
-      detail.classList.toggle('active');
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">Contact HHS</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">HHS FAQs</a></li>
+        <li><a href="#">Nondiscrimination Notice</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Press Room</a></li>
+        <li><a href="#">HHS Archive</a></li>
+        <li><a href="#">Accessibility Statement</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Budget/Performance</a></li>
+        <li><a href="#">Inspector General</a></li>
+        <li><a href="#">Web Site Disclaimers</a></li>
+        <li><a href="#">EEO/No Fear Act</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">FOIA</a></li>
+        <li><a href="#">The White House</a></li>
+        <li><a href="#">USA.gov</a></li>
+        <li><a href="#">Vulnerability Disclosure Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <p><strong>U.S. Department of Health and Human Services</strong><br>
+        200 Independence Avenue, S.W.<br>
+        Washington, D.C. 20201<br>
+        Toll Free Call Center: 1-877-696-6775</p>
+      </div>
+
+      <div class="footer-social">
+        <p>Follow HHS</p>
+        <div class="social-icons">
+          <a href="#">F</a>
+          <a href="#">X</a>
+          <a href="#">Y</a>
+          <a href="#">I</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+
+      <div class="footer-secretary">
+        <p>Follow Secretary Kennedy</p>
+        <div class="social-icons">
+          <a href="#">F</a>
+          <a href="#">X</a>
+          <a href="#">T</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ 
+   
+
+
+
+
+
+
+
+
+
+   <script>
+    function toggleMenu() {
+      document.getElementById('navList').classList.toggle('show');
     }
   </script>
 </body>
