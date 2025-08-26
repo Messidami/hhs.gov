@@ -1,78 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
-  <title>Laws & Regulations - HHS</title>
-  <link rel="stylesheet" href="css/law.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
 </head>
 <body>
-
-
-            <div class="info-section">
-    <a href="index.html" class="back-link">
-        <i class="bi bi-arrow-left"></i> Back to Front Page
-    </a>
-</div>
-
-<div class="bodyy">
-      <header class="header">
-    <h1>Laws & Regulations</h1>
-    <p>Explore key health policies and regulatory frameworks guiding HHS services.</p>
+   
+      <header>
+  <div class="header-left">
+      <img src="image/logo-desktop.svg" alt="Logo">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()"> Explore</button>
+  <div class="search-box">
+    <input type="text" placeholder="Search">
+    <i class="bi bi-search"></i>
+  </div>
   </header>
 
-  <main class="laws-container">
-    <section class="law-card">
-      <h2>HIPAA - Privacy Rule</h2>
-      <p>The Health Insurance Portability and Accountability Act protects patient privacy and secures health information.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>HIPAA ensures the confidentiality, integrity, and availability of health information. Healthcare providers must comply with security rules and inform patients about their rights.</p>
-      </div>
-    </section>
+  
 
-    <section class="law-card">
-      <h2>Affordable Care Act (ACA)</h2>
-      <p>The ACA expands access to healthcare, improves quality, and reduces healthcare costs across the U.S.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>The ACA includes protections for people with preexisting conditions, subsidies for low-income individuals, and the individual mandate requiring insurance coverage.</p>
-      </div>
-    </section>
+  <nav>
+    <ul id="navList">
+      <li><a href="about.html">About HHS</a></li>  
+      <li><a href="program.html">Programs & Services</a></li>
+      <li><a href="grant.html">Grants & Contracts</a></li>
+      <li><a href="law.html">Laws & Regulations</a></li>
+      <li><a href="radical.html">Radical Transparency</a></li>
+      <li><a href="#">MAHA in Action</a></li>
 
-    <section class="law-card">
-      <h2>Medicare & Medicaid Regulations</h2>
-      <p>These rules govern the eligibility, benefits, and delivery of care under federal health insurance programs.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>Medicare serves older adults and people with disabilities, while Medicaid offers support for low-income individuals. Each has different requirements and covered services.</p>
-      </div>
-    </section>
 
-    <section class="law-card">
-      <h2>Food & Drug Safety</h2>
-      <p>FDA regulations ensure the safety and efficacy of drugs, medical devices, and food products in the U.S.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>All manufacturers must follow strict testing, labeling, and approval procedures. The FDA also monitors post-market safety and responds to health risks.</p>
-      </div>
-    </section>
+    </ul>
+  </nav>
 
-    <section class="law-card">
-      <h2>Public Health Emergency Preparedness</h2>
-      <p>Legal frameworks for managing health crises, pandemics, and bioterrorism responses.</p>
-      <a href="javascript:void(0);" class="read-more" onclick="this.parentElement.classList.toggle('active')">Read More</a>
-      <div class="extra">
-        <p>HHS coordinates with local, state, and federal agencies to ensure readiness, resource allocation, and communication during national health emergencies.</p>
-      </div>
+
+  <div class="body">
+      <header class="site-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">›</span>
+      <span class="current">Laws & Regulations</span>
+    </nav>
+  </header>
+   </div>
+
+  <main class="container" id="main-content">
+    <h1>Laws & Regulations</h1>
+    <p class="lede">Agencies create regulations (also known as "rules") under the authority of Congress to help government carry out public policy. Learn about HHS' top regulations and how you can make your voice heard.
+    </p>
+
+    <section class="tiles-grid" aria-label="Quick links and resources">
+    
+      <article class="tile tile--list">
+        <h2>I would like info on...</h2>
+        <ul class="link-list">
+          <li><a href="#">How to file a Medicare complaint or appeal a decision</a></li>
+          <li><a href="#">Filing a complaint online</a></li>
+          <li><a href="#">Registering an institutional review board (IRB) or obtaining a Federalwide Assurance (FWA)</a></li>
+        </ul>
+      </article>
+
+     
+      <article class="tile">
+        <h2>Policy on Unlawful, Unconstitutional, or Burdensome Regulations</h2>
+        <p>The Immediate Office of the Secretary issued a Request for Information (RFI) to solicit input from the public to help identify duplicative regulations that are unlawful, unconstitutional, burdensome, or not in the national interest.</p>
+      </article>
+
+      <article class="tile">
+        <h2>HIPAA Privacy Rule</h2>
+        <p>The HIPAA Privacy Rule protects personal health information and gives patients a variety of rights.</p>
+      </article>
+
+      
+      <article class="tile">
+        <h2> Human Subjects Research Protections</h2>
+        <p>Institutions engaging in most HHS-supported human subject research must have an approved assurance of compliance with protective HHS regulations.</p>
+      </article>
+
+      <article class="tile">
+        <h2>HITECH Act</h2>
+        <p>The Health Information Technology for Economic and Clinical Health (HITECH) Act supports the development of a nationwide health IT infrastructure.</p>
+      </article>
+
+  
+      <article class="tile">
+        <h2>Comment on Open Rules</h2>
+        <p>You can play an important role in the Department’s decisions by commenting on proposed rules.</p>
+      </article>
+
+      <article class="tile">
+        <h2>Find Rules by Operating Division</h2>
+        <p>Rules and Notices from each HHS Operating Division are available on Regulations.gov.</p>
+      </article>
+
+
+       <article class="tile">
+        <h2>Additional HHS Laws & Regulations</h2>
+        <p>Find laws and regulations on civil rights, privacy rights, research, fraud prevention and detection, freedom of information, tribal matters, employment, and more.</p>
+      </article>
+
+    
+      <article class="tile">
+        <h2>Complaints & Appeals</h2>
+        <p>Find out how to file a complaint or appeal a decision related to health information privacy, civil rights, Medicare, and more.</p>
+      </article>
+
+       <article class="tile">
+        <h2>PREP Act</h2>
+        <p>Learn about Public Readiness and Emergency Preparedness (PREP) Act declarations and explore related advisory opinions and guidance.</p>
+      </article>
+
+       <article class="tile">
+        <h2> Regulatory Actions</h2>
+        <p>Learn about HHS proposed regulatory actions, agenda and priorities in the Federal Register.</p>
+      </article>
+       <article class="tile">
+        <h2>Regulatory Flexibility Act Section 610 Reviews</h2>
+        <p>The Regulatory Flexibility Act, 5 U.S.C. 610, directs HHS to periodically review regulations that have a significant economic impact upon a substantial number of small entities (“SEISNOSE”).</p>
+      </article>
+
+       <article class="tile">
+        <h2>HHS Guidance Portal</h2>
+        <p>HHS Guidance Portal is a searchable database for HHS guidance documents currently in effect. Guidance documents may include interpretive memoranda, policy statements, manuals, bulletins, advisories, and more.</p>
+      </article>
+
+       <article class="tile">
+        <h2>Help HHS Review Existing Regulations</h2>
+        <p>We invite suggestions of regulations to review – this helps us decide if they should be eliminated or modified.</p>
+      </article>
+
+      
+       <article class="tile">
+        <h2>Whistleblower Complaints on the Chemical and Surgical Mutilation of Children</h2>
+        <p>Report a tip or complaint related to the chemical and surgical mutilation of children.</p>
+      </article>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 HHS - Department of Health and Human Services</p>
+  Content created by Assistant Secretary for Public Affairs (ASPA) Content last reviewed April 14, 2025
+
+    <!-- Subscribe section -->
+  <section class="subscribe">
+    <h2>Subscribe to Email Updates</h2>
+    <p>Receive the latest updates from the Secretary and Press Releases.</p>
+    <form class="subscribe-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">Contact HHS</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">HHS FAQs</a></li>
+        <li><a href="#">Nondiscrimination Notice</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Press Room</a></li>
+        <li><a href="#">HHS Archive</a></li>
+        <li><a href="#">Accessibility Statement</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Budget/Performance</a></li>
+        <li><a href="#">Inspector General</a></li>
+        <li><a href="#">Web Site Disclaimers</a></li>
+        <li><a href="#">EEO/No Fear Act</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">FOIA</a></li>
+        <li><a href="#">The White House</a></li>
+        <li><a href="#">USA.gov</a></li>
+        <li><a href="#">Vulnerability Disclosure Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <p><strong>U.S. Department of Health and Human Services</strong><br>
+        200 Independence Avenue, S.W.<br>
+        Washington, D.C. 20201<br>
+        Toll Free Call Center: 1-877-696-6775</p>
+      </div>
+
+      <div class="footer-social">
+        <p>Follow HHS</p>
+        <div class="social-icons">
+          <a href="#">F</a>
+          <a href="#">X</a>
+          <a href="#">Y</a>
+          <a href="#">I</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+
+      <div class="footer-secretary">
+        <p>Follow Secretary Kennedy</p>
+        <div class="social-icons">
+          <a href="#">F</a>
+          <a href="#">X</a>
+          <a href="#">T</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+    </div>
   </footer>
-</div>
+
+ 
+   
+
+
+
+
+
+
+
+
+
+   <script>
+    function toggleMenu() {
+      document.getElementById('navList').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
