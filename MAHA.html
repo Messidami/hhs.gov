@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+ <link rel="stylesheet" href="css/MAHA.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+   
+      <header>
+  <div class="header-left">
+      <img src="image/logo-desktop.svg" alt="Logo">
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()"> Explore</button>
+  <div class="search-box">
+    <input type="text" placeholder="Search">
+    <i class="bi bi-search"></i>
+  </div>
+  </header>
+
+
+
+  
+
+  <nav>
+    <ul id="navList">
+      <li><a href="about.html">About HHS</a></li>  
+      <li><a href="program.html">Programs & Services</a></li>
+      <li><a href="grants-contracts.html">Grants & Contracts</a></li>
+      <li><a href="law.html">Laws & Regulations</a></li>
+      <li><a href="radical.html">Radical Transparency</a></li>
+      <li><a href="#">MAHA in Action</a></li>
+
+
+    </ul>
+  </nav>
+
+
+
+
+   <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="inner">
+
+        <div class="hero-left">
+          <span class="eyebrow">Make America Healthy Again</span>
+          <h2 id="hero-title">MAKE AMERICA <br> HEALTHY AGAIN</h2>
+
+          <p class="lead">
+            Building a healthier, stronger America.
+            Under the leadership of Secretary Robert F. Kennedy Jr., HHS is taking bold, decisive action to reform America's food, health, and scientific systems to identify the root causes of the chronic disease epidemic and Make America Healthy Again.
+          </p>
+
+          <div class="stats-row" role="list" aria-label="Health crisis by the numbers">
+            <div class="stat" role="listitem">
+              <div class="big">6 in 10</div>
+              <div class="small">Americans have at least one chronic disease</div>
+            </div>
+
+            <div class="stat" role="listitem">
+              <div class="big">1 in 4</div>
+              <div class="small">American children suffer from allergies</div>
+            </div>
+
+            <div class="stat" role="listitem">
+              <div class="big">40%</div>
+              <div class="small">Of Americans are diabetic or prediabetic</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-hidden="false">
+          <img class="hero-photo" src="https://www.hhs.gov/sites/default/files/styles/hero/public/hhs-hero-maha.png?itok=g4SiXmmJ" alt="Portrait of person on the right side of the hero">
+        </div>
+      </div>
+
+      <!-- white MAHA action strip overlapping edge -->
+      <div class="maha-strip">
+        <div class="maha-inner">
+          <h3>MAHA IN ACTION</h3>
+          <a class="cta" href="#" role="button">Explore MAHA</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- You can continue content sections below -->
+  </main>
+
+
+
+   <script>
+    function toggleMenu() {
+      document.getElementById('navList').classList.toggle('show');
+    }
+  </script>
+    
+</body>
+</html>
