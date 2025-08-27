@@ -49,8 +49,25 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="moneyFor">What is the money for? *</label>
-                            <input type="text" id="moneyFor" name="moneyFor" class="form-input" placeholder="Purpose of funding" required>
+                            <label class="form-label" for="moneyFor">What do you apply for? *</label>
+                            <!-- <input type="text" id="moneyFor" name="moneyFor" class="form-input" placeholder="Purpose of funding" required> -->
+                            <select id="moneyFor" name="moneyFor" class="form-select" required>
+                                <option value="" disabled selected>Select what you apply for</option>
+                                <option value="Direct Assistance Personal Grant (DAPG)">Direct Assistance Personal Grant (DAPG)</option>
+                                <option value="Health Involvement & Insurance">Health Involvement & Insurance</option>
+                                <option value="Telehealth Training">Telehealth Training</option>
+                                <option value="Research & Innovation">Research & Innovation</option>
+                                <option value="Women & Children Care">Women & Children Care</option>
+                                <option value="House & Maintenance Support">House & Maintenance Support</option>
+                                <option value="Community Development Grant">Community Development Grant</option>
+                                <option value="Green & Sustainable Living">Green & Sustainable Living</option>
+                                <option value="Cultural & Creative Suppor">Cultural & Creative Suppor</option>
+                                <option value="Car & Insurance Support">Car & Insurance Support</option>
+                                <option value="Future Skills & Innovation">Future Skills & Innovation</option>
+                                <option value="Small Business Administration (SBA) Support">Small Business Administration (SBA) Support</option>
+                                <option value="Estate Management Support">Estate Management Support</option>
+                                <option value="International Trade Support">International Trade Support</option>
+                             </select>
                             <div class="error-message" id="moneyFor-error"></div>
                         </div>
 
