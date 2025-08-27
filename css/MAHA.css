@@ -118,22 +118,28 @@
     }
     .main-nav a:hover{opacity:1}
 
-    /* HERO */
     .hero{
       background: linear-gradient(180deg, rgba(7,32,51,0.95) 0%, rgba(4,9,44,0.85) 60%);
       color:var(--text);
+      height: 500px;
+      width: 90%;
+      margin: auto;
+      margin-top: 20px;
       padding:48px var(--container-pad) 64px;
     }
     .hero .inner{
       max-width: var(--max-width);
       margin:0 auto;
       display:grid;
+      line-height: 40px;
+      padding: 30px;
       grid-template-columns: 1fr 420px;
       gap: var(--gap);
       align-items:center;
     }
     .hero-left{
       padding-right:12px;
+      width: 80%;
     }
     .eyebrow{
       display:inline-block;
@@ -158,7 +164,6 @@
       font-size:16px;
     }
 
-    /* Stats row inside hero */
     .stats-row{
       display:flex;
       gap:18px;
@@ -187,7 +192,7 @@
       opacity:0.9;
     }
 
-    /* Hero image */
+  
     .hero-right{
       display:flex;
       justify-content:flex-end;
@@ -195,45 +200,13 @@
     .hero-photo{
       width:100%;
       max-width:420px;
-      height:320px;
       object-fit:cover;
       border-radius:8px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.45);
       border: 6px solid rgba(255,255,255,0.02);
       background: linear-gradient(180deg,#ffffff05,#00000010);
     }
-
-    /* MAHA IN ACTION strip */
-    .maha-strip{
-      margin-top:28px;
-      background: #fff;
-      padding: 22px var(--container-pad);
-      border-top-left-radius:8px;
-      border-top-right-radius:8px;
-      box-shadow: 0 -6px 20px rgba(7,32,51,0.03);
-    }
-    .maha-inner{
-      max-width: var(--max-width);
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .maha-inner h3{
-      margin:0;
-      color:#12243a;
-      letter-spacing:2px;
-      font-size:14px;
-    }
-    .maha-inner .cta{
-      background:var(--nav-blue);
-      color:var(--white);
-      padding:10px 16px;
-      border-radius:8px;
-      font-weight:700;
-      text-decoration:none;
-    }
+  
 
     /* responsive */
     @media (max-width:1000px){
@@ -308,6 +281,10 @@
 
 
   @media (max-width: 768px) {
+    .hero{
+        height: auto;
+        width: 100%;
+    }
         header{
             align-items: center;
             width: 100%;
